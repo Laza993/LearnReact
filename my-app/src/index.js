@@ -6,40 +6,38 @@ import './index.css'
 
 //setup vars
 
-const books = [
-  {
-    id: 1,
-    title: 'Believe IT: How to Go from Underestimated to Unstoppable',
-    author: 'Jamie Kern Lima',
-    img:
-      'https://images-na.ssl-images-amazon.com/images/I/41635oqEvvL._SX327_BO1,204,203,200_.jpg',
-  },
-  {
-    id: 2,
-    title: 'Life After Death',
-    author: 'Sister Souljah ',
-    img:
-      'https://images-na.ssl-images-amazon.com/images/I/41FYi16jzwL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
-  },
-  {
-    id: 3,
-    title: 'Brown Bear, Brown Bear, What Do You See?',
-    author: ' Bill Martin Jr. ',
-    img:
-      'https://images-na.ssl-images-amazon.com/images/I/51430n+9jlL._SY344_BO1,204,203,200_.jpg',
-  },
+const books = [{
+        id: 1,
+        title: 'Believe IT: How to Go from Underestimated to Unstoppable',
+        author: 'Jamie Kern Lima',
+        img: 'https://images-na.ssl-images-amazon.com/images/I/41635oqEvvL._SX327_BO1,204,203,200_.jpg',
+    },
+    {
+        id: 2,
+        title: 'Life After Death',
+        author: 'Sister Souljah ',
+        img: 'https://images-na.ssl-images-amazon.com/images/I/41FYi16jzwL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg',
+    },
+    {
+        id: 3,
+        title: 'Brown Bear, Brown Bear, What Do You See?',
+        author: ' Bill Martin Jr. ',
+        img: 'https://images-na.ssl-images-amazon.com/images/I/51430n+9jlL._SY344_BO1,204,203,200_.jpg',
+    },
 ]
 
 function BookList() {
-  return (
-    <section className='booklist'>
-      {books.map((book) => {
-        // Book(book)
-        // return <Book key={book.id} book={book} />
-        return <Book key={book.id} {...book} />
-      })}
-    </section>
-  )
+    return ( <
+        section className = 'booklist' > {
+            books.map((book) => {
+                // Book(book)
+                // return <Book key={book.id} book={book} />
+                return <Book key = { book.id } {...book }
+                />
+            })
+        } <
+        /section>
+    )
 }
 
 // const Book = ({ img, title, author }) => {
@@ -54,35 +52,42 @@ function BookList() {
 // }
 
 const clickHandler = (e) => {
-  console.log(e)
-  console.log(e.target)
-  return alert('hello World')
+    console.log(e)
+    console.log(e.target)
+    return alert('hello World')
 }
 
 const moreComplex = (auth) => {
-  console.log(auth)
+    console.log(auth)
 }
 
 const Book = (props) => {
-  const { img, title, author } = props
-  return (
-    <article
-      className='book'
-      onMouseOver={() => {
-        console.log(title)
-      }}
-    >
-      <img src={img} alt='' />
-      <h2 onClick={() => console.log(title)}>{title}</h2>
-      <h3>{author}</h3>
-      <button type='button' onClick={clickHandler}>
-        alert
-      </button>
-      <button type='button' onClick={() => moreComplex(author)}>
-        moreComplex
-      </button>
-    </article>
-  )
+    const { img, title, author } = props
+    return ( <
+        article className = 'book'
+        onMouseOver = {
+            () => {
+                console.log(title)
+            }
+        } >
+        <
+        img src = { img }
+        alt = '' / >
+        <
+        h2 onClick = {
+            () => console.log(title) } > { title } < /h2> <
+        h3 > { author } < /h3> <
+        button type = 'button'
+        onClick = { clickHandler } >
+        alert <
+        /button> <
+        button type = 'button'
+        onClick = {
+            () => moreComplex(author) } >
+        moreComplex <
+        /button> <
+        /article>
+    )
 }
 
 // ########################################
@@ -179,4 +184,4 @@ const Book = (props) => {
 //   return <h2>Uspeo sam u zivotu, zavide mi svi</h2>
 // }
 
-ReactDom.render(<BookList />, document.getElementById('root'))
+ReactDom.render( < BookList / > , document.getElementById('root'))

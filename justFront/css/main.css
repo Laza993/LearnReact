@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap);
+:root {
+  --primary-color: #007AF3;
+}
+
+body {
+  background: #F2F2F2;
+  margin: 0;
+  font-family: 'Poppins';
+}
+
+.navbar {
+  background: white;
+  padding: 1em;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+}
+
+.navbar .logo span {
+  color: var(--primary-color);
+}
+
+nav {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */
